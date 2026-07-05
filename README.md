@@ -1,4 +1,4 @@
-# Interview Bot
+# Interview Bot (In-Progress)
 
 A **stateless**, AI-powered voice interview platform that conducts fully automated job interviews from start to finish. The system combines OpenAI's speech-to-text for accurate transcription with LLM-driven agents that manage natural, context-aware conversation — all orchestrated through a LangGraph state machine that enforces a structured multi-phase interview flow.
 
