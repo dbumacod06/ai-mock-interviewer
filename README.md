@@ -129,3 +129,7 @@ The interview follows a structured flow with configurable phases:
 - `GET /api/applicants` - List applicants
 - `POST /api/applicants` - Create applicant
 - `GET /api/applicants/{id}` - Get applicant details
+
+## Database Schema
+
+See [DATABASE_SCHEMA.md](DATABASE_SCHEMA.md) for full table definitions, relationships, and the LangGraph state structure.
