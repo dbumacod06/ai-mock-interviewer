@@ -1,13 +1,19 @@
 # Interview Bot
 
-An AI-powered voice interview platform that conducts automated job interviews using speech-to-text, LLM-driven conversation, and structured interview phases.
+A **stateless**, AI-powered voice interview platform that conducts fully automated job interviews from start to finish. The system combines OpenAI's speech-to-text for accurate transcription with LLM-driven agents that manage natural, context-aware conversation — all orchestrated through a LangGraph state machine that enforces a structured multi-phase interview flow.
+
+**Stateless by design**: The backend holds no in-memory session state between requests. Every API call is self-contained: the full interview context (conversation history, phase tracking, question counts, follow-up status) is persisted in Supabase and reconstructed on each turn via LangGraph's graph execution. This architecture delivers:
+- **Zero session affinity** — any server instance can handle any request
+- **Horizontal scalability** — spin up additional instances without coordination
+- **Crash resilience** — server restarts never lose interview progress; state rehydrates from the database
+- **Clean concurrency** — multiple interviews run independently with no shared mutable state
 
 ## Architecture
 
-- **Backend**: FastAPI service handling interview workflow, transcription, and AI agents
-- **Frontend**: React + Vite voice assistant UI
-- **Database**: Supabase (PostgreSQL) for applicant data, conversations, and graph state
-- **AI**: OpenAI GPT-4o for transcription, interview generation, and answer evaluation
+- **Backend**: FastAPI service with LangGraph-driven interview workflow, transcription pipeline, and specialist AI agents
+- **Frontend**: React + Vite voice assistant UI with real-time microphone recording, audio visualization, and Markdown-rendered responses
+- **Database**: Supabase (PostgreSQL) for applicant data, conversations, CVs, job profiles, sessions, and LangGraph state persistence
+- **AI**: OpenAI GPT-4o for transcription, interview question generation, answer evaluation, and applicant inquiry responses
 
 ## Setup
 

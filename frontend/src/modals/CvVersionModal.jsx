@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-export default function CvVersionSelection({
+export default function CvVersionModal({
   existingVersions,
   onSelectVersion,
   onCreateNew,

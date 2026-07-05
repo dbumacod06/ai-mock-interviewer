@@ -1,13 +1,13 @@
 import { useEffect, useRef, useState } from 'react';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
-import ApplicantModal from './ApplicantModal';
-import ApplicantConfirmationModal from './ApplicantConfirmationModal';
-import CvModal from './CvModal';
-import CvVersionSelection from './CvVersionSelection';
-import JobProfileModal from './JobProfileModal';
-import SessionSelection from './SessionSelection';
-import InterviewReviewModal from './InterviewReviewModal';
+import ApplicantModal from './modals/ApplicantModal';
+import ApplicantConfirmationModal from './modals/ApplicantConfirmationModal';
+import CvModal from './modals/CvModal';
+import CvVersionModal from './modals/CvVersionModal';
+import JobProfileModal from './modals/JobProfileModal';
+import SessionModal from './modals/SessionModal';
+import InterviewReviewModal from './modals/InterviewReviewModal';
 
 const initialApplicantDetails = {
   firstName: '',
@@ -634,7 +634,7 @@ export default function App() {
       ) : null}
 
       {activeModal === 'cvVersionSelection' && applicantDetails?.applicantId ? (
-        <CvVersionSelection
+        <CvVersionModal
           existingVersions={cvVersions}
           onSelectVersion={handleCvVersionSelect}
           onCreateNew={handleCreateNewCvVersion}
@@ -671,7 +671,7 @@ export default function App() {
       ) : null}
 
       {activeModal === 'sessionSelection' && applicantDetails?.applicantId ? (
-        <SessionSelection
+        <SessionModal
           applicantId={applicantDetails.applicantId}
           onContinueSession={handleContinueSession}
           onStartNewSession={handleStartNewSession}

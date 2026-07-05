@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-export default function SessionSelection({
+export default function SessionModal({
   applicantId,
   onContinueSession,
   onStartNewSession,
