@@ -1,0 +1,24 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Local environment and cache files
+.env
+.env.*
+**/.env
+.pytest_cache/
+.DS_Store
+
+# Dependency and temporary directories
+node_modules/
+tmp/
+
+# Virtual environments
+.venv
+
+models/
+archive/
